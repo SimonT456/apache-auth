@@ -25,9 +25,7 @@ I use a dedicated domain `auth.kevinlin.info` for SSO authentication requests. R
 First, the necessary modules need to be enabled. `mod_session_crypto` can be optionally enabled to make use of the `SessionCryptoPassphrase` directive for encrypted client-side cookies.
 
 ```bash
-$ sudo a2enmod session
-$ sudo a2enmod session_crypto
-$ sudo a2enmod auth_form
+$ sudo a2enmod auth_form session session_crypto session_cookie request
 ```
 
 Making use of this application involves setting up the configuration for the virtual host running the authentication site (in my case, `auth.kevinlin.info`), and configuration for any virtual host that should be protected with authentication.
@@ -99,7 +97,7 @@ Securing a virtual host is as simple as adding a directive under a `Location` bl
 ```apache
 <VirtualHost ...>
 	...
-    
+
 	<Location "/">
         AuthFormProvider file
         AuthUserFile "/etc/apache2/.htpasswd"
