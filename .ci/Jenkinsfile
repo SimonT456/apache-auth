@@ -1,0 +1,59 @@
+pipeline {
+    agent {
+        dockerfile {
+            dir '.ci'
+        }
+    }
+
+    stages {
+        stage('Install') {
+            parallel {
+                stage('Node') {
+                    steps {
+                        sh 'npm-s3 install'
+                    }
+                }
+                stage('Environment') {
+                    steps {
+                        sh 'cp config/secrets.js.template config/secrets.js'
+                    }
+                }
+            }
+        }
+        stage('Build') {
+            parallel {
+                stage('Javascript') {
+                    steps {
+                        sh 'npm run build-js'
+                    }
+                }
+                stage('CSS') {
+                    steps {
+                        sh 'npm run build-css'
+                    }
+                }
+            }
+        }
+        stage('Test') {
+            parallel {
+                stage('Lint') {
+                    steps {
+                        sh 'npm run lint-js'
+                        sh 'npm run lint-scss'
+                    }
+                }
+                stage('Unit') {
+                    steps {
+                        sh 'npm run test'
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            deleteDir()
+        }
+    }
+}
