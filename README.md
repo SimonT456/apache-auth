@@ -1,6 +1,6 @@
 # apache-auth
 
-[![Build Status](https://travis-ci.org/LINKIWI/apache-auth.svg?branch=master)](https://travis-ci.org/LINKIWI/apache-auth) [![Coverage Status](https://coveralls.io/repos/github/LINKIWI/apache-auth/badge.svg?branch=master)](https://coveralls.io/github/LINKIWI/apache-auth?branch=master)
+[![Build Status](https://travis-ci.org/SimonT456/apache-auth.svg?branch=master)](https://travis-ci.org/SimonT456/apache-auth) [![Coverage Status](https://coveralls.io/repos/github/SimonT456/apache-auth/badge.svg?branch=master)](https://coveralls.io/github/SimonT456/apache-auth?branch=master)
 
 Frontend for a transparent cookie-based authentication layer for arbitrary Apache vhosts
 
