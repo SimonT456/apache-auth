@@ -1,6 +1,9 @@
 # apache-auth
 
 [![Build Status](https://travis-ci.org/SimonT456/apache-auth.svg?branch=master)](https://travis-ci.org/SimonT456/apache-auth) [![Coverage Status](https://coveralls.io/repos/github/SimonT456/apache-auth/badge.svg?branch=master)](https://coveralls.io/github/SimonT456/apache-auth?branch=master)
+[![dependencies Status](https://david-dm.org/SimonT456/apache-auth/status.svg)](https://david-dm.org/SimonT456/apache-auth)
+[![devDependencies Status](https://david-dm.org/SimonT456/apache-auth/dev-status.svg)](https://david-dm.org/SimonT456/apache-auth?type=dev)
+[![optionalDependencies Status](https://david-dm.org/SimonT456/apache-auth/optional-status.svg)](https://david-dm.org/SimonT456/apache-auth?type=optional)
 
 Frontend for a transparent cookie-based authentication layer for arbitrary Apache vhosts
 
